@@ -20,9 +20,9 @@ class CreatePortablesTable extends Migration
             $table->id();
             $table->bigInteger('sid')->unsigned();
             $table->foreign('sid')->references('id')->on('studydetails');
-            $table->date('last_menstural_period')->nullable()->default(NULL);
-            $table->time('ot_in_time')->nullable()->default(NULL);
-            $table->time('ot_out_time')->nullable()->default(NULL);
+            $table->date('portable_last_menstural_period')->nullable()->default(NULL);
+            $table->time('portable_ot_in_time');
+            $table->time('portable_ot_out_time');
             $table->timestamps();
         });
     }

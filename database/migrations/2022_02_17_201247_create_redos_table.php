@@ -17,9 +17,9 @@ class CreateRedosTable extends Migration
             $table->id();
             $table->bigInteger('sid')->unsigned();
             $table->foreign('sid')->references('id')->on('studydetails');
-            $table->string('error')->nullable()->default(NULL);
-            $table->string('corrective_action')->nullable()->default(NULL);
-            $table->string('corrected_by')->nullable()->default(NULL);
+            $table->string('redos_error');
+            $table->string('redos_corrective_action');
+            $table->string('redos_corrected_by');
             $table->timestamps();
         });
     }

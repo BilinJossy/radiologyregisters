@@ -20,12 +20,12 @@ class CreateMrisTable extends Migration
             $table->id();
             $table->bigInteger('sid')->unsigned();
             $table->foreign('sid')->references('id')->on('studydetails');
-            $table->string('weight')->nullable()->default(NULL);
-            $table->string('contrast')->nullable()->default(NULL);
-            $table->string('creatine')->nullable()->default(NULL);
-            $table->String('start_date')->nullable()->default(NULL);
-            $table->String('end_date')->nullable()->default(NULL);
-            $table->String('bill_date')->nullable()->default(NULL);
+            $table->string('mri_weight');
+            $table->string('mri_contrast');
+            $table->string('mri_creatine');
+            $table->String('mri_start_date');
+            $table->String('mri_end_date');
+            $table->String('mri_bill_date');
             $table->timestamps();
         });
     }

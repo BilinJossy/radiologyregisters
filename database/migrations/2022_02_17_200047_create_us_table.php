@@ -20,11 +20,11 @@ class CreateUsTable extends Migration
             $table->id();
             $table->bigInteger('sid')->unsigned();
             $table->foreign('sid')->references('id')->on('studydetails');
-            $table->String('output_media');
-            $table->string('stenographer')->nullable()->default(NULL);
-            $table->String('start_date')->nullable()->default(NULL);
-            $table->String('end_date')->nullable()->default(NULL);
-            $table->String('bill_date')->nullable()->default(NULL);
+            $table->String('us_output_media');
+            $table->string('us_stenographer');
+            $table->String('us_start_date');
+            $table->String('us_end_date');
+            $table->String('us_bill_date');
             $table->timestamps();
         });
     }

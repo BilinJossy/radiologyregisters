@@ -1,0 +1,52 @@
+//$c->start_date=$startdate. '  '.$starttime;
+       // $c->start_time=$starttime;
+        //$c->end_date=$enddate.'  '.$endtime;
+        //$c->end_time=$endtime;
+        //$c->bill_date=$billdate. '  '.$billtime;
+        //$c->bill_time=$billtime;
+        // $c->weight=$weight;
+        // $c->contrast=$contrast;
+        // $c->creatine=$creatine;
+        // $c->kV=$kV;
+        // $c->mAs=$mAs;
+        // $c->dose=$dose;
+        // $c->radiologist=$radiologist;
+        // $c->stenographer=$stenographer;
+        // $c->exposure_count=$exposurecount;
+        // $c->exposure_time=$exposuretime;
+        // $c->ot_in_time=$otintime;
+        // $c->ot_out_time=$otouttime;
+        // $c->error=$error;
+        // $c->corrective_action=$correctiveaction;
+        // $c->corrected_by=$correctedby;
+        // $c->output_media=$outputmedia;
+
+        // $l=new login();
+
+        //$c->last_menstural_period=$lastmensturalperiod;
+
+
+        //$startdate=request('xraystartdate');
+        //dd($startdate);
+        //$starttime=request('xraystarttime');
+        // $enddate=request('enddate');
+        // $endtime=request('endtime');
+        // $billdate=request('billdate');
+        // $billtime=request('billtime');
+        //$weight=request('weight');
+        //$contrast=request('contrast');
+        //$creatine=request('creatine');
+        //$kV=request('kV');
+        //$mAs=request('mAs');
+        //$dose=request('dose');
+        $radiologist=request('radiologist');
+        $stenographer=request('stenographer');
+        $exposurecount=request('exposurecount');
+        $exposuretime=request('exposuretime');
+        $otintime=request('otintime');
+        $otouttime=request('otouttime');
+        $error=request('error');
+        $correctiveaction=request('correctiveaction');
+        $correctedby=request('correctedby');
+        //$outputmedia=request('outputmedia');
+        // $lastmensturalperiod=request('mensturalstartdate');

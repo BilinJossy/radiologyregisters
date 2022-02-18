@@ -20,11 +20,11 @@ class CreateMgsTable extends Migration
             $table->id();
             $table->bigInteger('sid')->unsigned();
             $table->foreign('sid')->references('id')->on('studydetails');
-            $table->date('last_menstural_period')->nullable()->default(NULL);
-            $table->String('output_media');
-            $table->String('start_date')->nullable()->default(NULL);
-            $table->String('end_date')->nullable()->default(NULL);
-            $table->String('bill_date')->nullable()->default(NULL);
+            $table->date('mg_last_menstural_period')->nullable()->default(NULL);
+            $table->String('mg_output_media');
+            $table->String('mg_start_date');
+            $table->String('mg_end_date');
+            $table->String('mg_bill_date');
             $table->timestamps();
         });
     }

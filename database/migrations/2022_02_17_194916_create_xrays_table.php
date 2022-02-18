@@ -20,11 +20,11 @@ class CreateXraysTable extends Migration
             $table->id();
             $table->bigInteger('sid')->unsigned();
             $table->foreign('sid')->references('id')->on('studydetails');
-            $table->date('last_menstural_period')->nullable()->default(NULL);
-            $table->String('output_media');
-            $table->String('start_date')->nullable()->default(NULL);
-            $table->String('end_date')->nullable()->default(NULL);
-            $table->String('bill_date')->nullable()->default(NULL);
+            $table->date('xray_last_menstural_period')->nullable()->default(NULL);
+            $table->String('xray_output_media');
+            $table->String('xray_start_date');
+            $table->String('xray_end_date');
+            $table->String('xray_bill_date');
             $table->timestamps();
         });
     }

@@ -20,16 +20,16 @@ class CreateCtsTable extends Migration
             $table->id();
             $table->bigInteger('sid')->unsigned();
             $table->foreign('sid')->references('id')->on('studydetails');
-            $table->date('last_menstural_period')->nullable()->default(NULL);
-            $table->string('weight')->nullable()->default(NULL);
-            $table->string('contrast')->nullable()->default(NULL);
-            $table->string('creatine')->nullable()->default(NULL);
-            $table->string('kV')->nullable()->default(NULL);
-            $table->string('mAs')->nullable()->default(NULL);
-            $table->string('dose')->nullable()->default(NULL);
-            $table->String('start_date')->nullable()->default(NULL);
-            $table->String('end_date')->nullable()->default(NULL);
-            $table->String('bill_date')->nullable()->default(NULL);
+            $table->date('ct_last_menstural_period')->nullable()->default(NULL);
+            $table->string('ct_weight');
+            $table->string('ct_contrast');
+            $table->string('ct_creatine');
+            $table->string('ct_kV');
+            $table->string('ct_mAs');
+            $table->string('ct_dose');
+            $table->String('ct_start_date');
+            $table->String('ct_end_date');
+            $table->String('ct_bill_date');
             $table->timestamps();
         });
     }

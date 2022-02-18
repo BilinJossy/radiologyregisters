@@ -21,12 +21,12 @@ class CreateCarmsTable extends Migration
             $table->id();
             $table->bigInteger('sid')->unsigned();
             $table->foreign('sid')->references('id')->on('studydetails');
-            $table->string('exposure_count')->nullable()->default(NULL);
-            $table->time('exposure_time')->nullable()->default(NULL);
-            $table->time('procedure_start_time')->nullable()->default(NULL);
-            $table->time('procedure_end_time')->nullable()->default(NULL);
-            $table->time('ot_in_time')->nullable()->default(NULL);
-            $table->time('ot_out_time')->nullable()->default(NULL);
+            $table->string('carms_exposure_count');
+            $table->time('carms_exposure_time');
+            $table->time('carms_procedure_start_time');
+            $table->time('carms_procedure_end_time');
+            $table->time('carms_ot_in_time');
+            $table->time('carms_ot_out_time');
             $table->timestamps();
         });
     }
