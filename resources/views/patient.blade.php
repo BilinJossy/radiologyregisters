@@ -76,11 +76,19 @@
                                             placeholder=" ">
                                             <span style="color:red" >@error('patientdob') {{$message}} @enderror</span>
                                     </div>
-                                    <div class="col-md-12 form-group p_star" id="gender">
-                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" id="gender" onclick="text(1)" value="male" name="gender">
-                                        <label>Male</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                        <input type="radio" id="gender" name="gender" value="female" onclick="text(0)">
+                                    <div class="col-md-12 align-items-center form-group p_star" margin="5px 0 0 5px" float="left" id="gender">
+                                        
+                                        <input type="radio" float="left" padding="2px" id="gender"  value="male" name="gender">
+                                        <label>Male</label>
+                                        
+                                        
+                                        <input type="radio" float="left" padding="2px" id="gender" name="gender" value="female" >
                                         <label>Female</label>
+                                        
+                                        
+                                        <input type="radio" float="left" padding="2px" id="gender" name="gender" value="others" >
+                                        <label>Others</label>
+                                        
                                             <span style="color:red" >@error('gender') {{$message}} @enderror</span>
                                     </div>
                                     
