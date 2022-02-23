@@ -41,9 +41,6 @@
                                     </button>
                                 </div>
                             </form>
-                            <div class="col-md-12 form-group">
-                                    <a href="/reg" class="btn_3">Register</a>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-3">

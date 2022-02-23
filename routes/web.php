@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\registercontroller;
 use App\Http\Controllers\patientcontroller;
 use App\Http\Controllers\testcontroller;
+use App\Http\Controllers\managercontroller;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,16 +28,8 @@ Route::get('/reg', function () {
 Route::get('/pat', function () {
     return view('patient');
 });
-Route::get('/xray', function () {
-    return view('xray');
-});
 
-Route::get('/test', function () {
-    return view('tests');
-});
-
-
-Route::post('/register1',[registercontroller::class,'store']);
+Route::post('/register1',[managercontroller::class,'store']);
 Route::post('/login1',[registercontroller::class,'check']);
 Route::post('/pat1',[patientcontroller::class,'store']);
 Route::post('/stu1',[patientcontroller::class,'store1']);
@@ -55,3 +49,4 @@ Route::get('/listmg',[testcontroller::class,'listmg']);
 Route::get('/listbmd',[testcontroller::class,'listbmd']);
 Route::get('/listredos',[testcontroller::class,'listredos']);
 Route::get('/listportable',[testcontroller::class,'listportable']);
+Route::get('/staff',[managercontroller::class,'viewstaff']);

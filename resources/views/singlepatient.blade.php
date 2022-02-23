@@ -64,11 +64,7 @@
 
         <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-4 col-md-4">
-            
-            </div>
-            <div class="col-lg-4 col-md-4"> 
-            
+            <div class="col-lg-8 col-md-8"> 
             </div>
             <div class=" text-center col-lg-2 col-md-2">
             <a href="\stu\{{ $data->id }}" class="btn btn-primary">Add Study</a>
@@ -86,7 +82,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2 col-md-2">
                     </div>
-                    <div class="col-lg-8 col-md-8">
+                    <div class="col-lg-8 col-md-8 my-3">
                                 <table class="table table-bordered">
                                     <tr>
                                         <th><label >Technician Name</label></th>
@@ -108,7 +104,7 @@
                                     </tr>
                                     @endforeach
                                 </table>
-                                {{$datas->links()}}
+                              
                     </div>
                     <div class="col-lg-2 col-md-2">
                     </div>

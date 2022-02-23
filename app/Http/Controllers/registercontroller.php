@@ -33,65 +33,7 @@ class registercontroller extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $employeeid=request('employeeid');
-        $employeename=request('employeename');
-        $employeemail=request('employeemail');
-        $employeepassword=request('employeepassword');
-        $employeeconfirmpassword=request('employeeconfirmpassword');
-
-        $this->validate($request,[
-            'employeeid'=>'required',
-            'employeename'=>'required',
-            'employeemail'=>'required|email',
-            'employeepassword'=>'required|min:5|max:15',
-            'employeeconfirmpassword'=>'required|min:5|max:15'
-        ]);
-
-        if($employeepassword == $employeeconfirmpassword){
-        
-        $employeepassword1=Hash::make($employeepassword);
-        
-        $c=new register();
-
-        // $l=new login();
-
-        $c->employee_id=$employeeid;
-        $c->employee_name=$employeename;
-        $c->employee_mail=$employeemail;
-        $c->employee_password=$employeepassword1;
-        $c->user_type="radiologist";
-        $c->employee_isactive="1";
-
-
-        $c->save();
-        // $l->save();
-        //echo "added";
-        
-        if($c)
-             {
-               
-                $i=register::select('employee_id')->where('employee_id','like',"$employeeid")->first();
-                echo "<script>alert('Success.. User Added.....');window.location='/';</script>"; 
-             }
-             else{
-                echo "<script>alert('Something went Wrong.......');window.location='/reg';</script>"; 
-             }
-
-       
-
-
-        //return view('index');
-
-
-        }
-        else{
-            echo "<script>alert('Password is not correct......');window.location='/reg';</script>"; 
-        }
-    }
-
+     */    
     public function check(Request $request)
     {
         $employeeid=request('employeeid');

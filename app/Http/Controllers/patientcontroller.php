@@ -333,7 +333,7 @@ class patientcontroller extends Controller
     {
         $search_text = $request->get('patient');
       //  dd($search_text);
-        $data = ($search_text != null ) ? patient::where('patientname','LIKE','%'.$search_text.'%')->paginate(10) : patient::paginate(10);
+        $data = ($search_text != null ) ? patient::where('patient_name','LIKE','%'.$search_text.'%')->paginate(10) : patient::paginate(10);
        // $patient= patient::where('patientname','LIKE','%'.$search_text.'%')->get();
        // $data=patient::paginate(10);
         //$patientdob= Carbon::parse('patientdob');
