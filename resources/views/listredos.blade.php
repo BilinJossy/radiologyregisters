@@ -31,27 +31,26 @@
                     <table class="table table-bordered">
                                     <tr>
                                         <th><label >Patient Name</label></th>
-                                        <th><label >Start Date</label></th>
                                         <th><label >Visit Type</label></th>
                                         <th><label >Error</label></th>
                                         <th><label >Corrective Action</label></th>
                                         <th><label >Corrected By</label></th>
-                                        <th><label >MG Time</label></th>
+                                        <th><label >REDOS Time</label></th>
                                     </tr>
                                     @foreach($data as $d)
                                     <tr>
                                         <td>{{$d->studydetails->patient->patientname}}</td>
-                                        <td>{{$d->studydetails->startdate}}</td>
                                         <td>{{$d->studydetails->visittype}}</td>
-                                        <td>{{$d->error}}</td>
-                                        <td>{{$d->correctiveaction}}</td>
-                                        <td>{{$d->correctiveaction}}</td>
+                                        <td>{{$d->redos_error}}</td>
+                                        <td>{{$d->redos_corrective_action}}</td>
+                                        <td>{{$d->redos_corrected_by}}</td>
                                         <td>{{$d->created_at}}</td>
                                         <td><a href="plist/slist/{{$d->studydetails->id}}"class="btn_5">View Study</a>
                                         </td>
                                     </tr>
                                     @endforeach
                                 </table>
+                                {{$data->links()}}
                     </div>
                     <div class="col-lg-2 col-md-2">
                     </div>

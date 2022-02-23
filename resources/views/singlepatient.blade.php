@@ -40,7 +40,14 @@
                                         <td>{{ $data->uhid }}</td>
                                         <td>{{ $data->patient_name }}</td>
                                         <td>{{\Carbon\Carbon::parse($data->patient_dob)->diff(\Carbon\Carbon::now())->format('%y');}}</td>
-                                        <td>{{ $data->patient_gender }}</td>
+                                        <td>@if($data->patient_gender == 0)
+                                                Male
+                                            @elseif($data->patient_gender == 1)
+                                                Female
+                                            @elseif($data->patient_gender == 2)
+                                                Others
+                                            @endif
+                                        </td>
                                     </tr>
                                 </table>
                     </div>
@@ -85,6 +92,7 @@
                                         <th><label >Technician Name</label></th>
                                         <th><label >Investigation</label></th>
                                         <th><label >Visit Type</label></th>
+                                        <th><label >Modality</label></th>
                                         <th><label >Remarks</label></th>
                                         <th><label > </label></th>
                                     </tr>
@@ -93,12 +101,14 @@
                                         <td>{{$d->technician_name}}</td>
                                         <td>{{$d->investigation}}</td>
                                         <td>{{$d->visit_type}}</td>
+                                        <td>{{$d->modality}}</td>
                                         <td>{{$d->remarks}}</td>
                                         <td><a href="slist/{{$d->id}} "class="btn_5">View Study</a>
                                         </td>
                                     </tr>
                                     @endforeach
                                 </table>
+                                {{$datas->links()}}
                     </div>
                     <div class="col-lg-2 col-md-2">
                     </div>

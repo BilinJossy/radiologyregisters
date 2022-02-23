@@ -85,7 +85,7 @@
                                     </select>
                                     </div>
                                     <div class="DX box col-md-12 form-group p_star">
-                                    @if($gen[0] == "female")
+                                    @if($gen[0] == 1)
                                         <div class="col-md-12 form-group p_star">
                                         <label for=" ">Last Menstural Period</label>
                                             <input type="date" class="form-control " id="xraymensturalstartdate" name="xraymensturalstartdate" value="" >
@@ -117,7 +117,7 @@
                                         </div>
                                     </div>
                                     <div class="CT box col-md-12 form-group p_star">
-                                        @if($gen[0] == "female")
+                                        @if($gen[0] == 1)
                                         <div class="col-md-12 form-group p_star">
                                         <label for=" ">Last Menstural Period</label>
                                             <input type="date" class="form-control " id="ctmensturalstartdate" name="ctmensturalstartdate" value="" >
@@ -193,7 +193,7 @@
                                     </div>
                                     </div>
                                     <div class="MG box col-md-12 form-group p_star">
-                                    @if($gen[0] == "female")
+                                    @if($gen[0] == 1)
                                     <div class="col-md-12 form-group p_star">
                                     <label for=" ">Last Menstural Period</label>
                                         <input type="date" class="form-control " id="mgmensturalstartdate" name="mgmensturalstartdate" value="" >
@@ -225,7 +225,7 @@
                                     </div>
                                     </div>
                                     <div class="RF box col-md-12 form-group p_star">
-                                    @if($gen[0] == "female")
+                                    @if($gen[0] == 1)
                                     <div class="col-md-12 form-group p_star">
                                     <label for=" ">Last Menstural Period</label>
                                         <input type="date" class="form-control " id="rfmensturalstartdate" name="rfmensturalstartdate" value="" >
@@ -257,7 +257,7 @@
                                     </div>
                                     </div>
                                     <div class="BMD box col-md-12 form-group p_star">
-                                    @if($gen[0] == "female")
+                                    @if($gen[0] == 1)
                                     <div class="col-md-12 form-group p_star">
                                     <label for=" ">Last Menstural Period</label>
                                         <input type="date" class="form-control " id="bmdmensturalstartdate" name="bmdmensturalstartdate" value="" >
@@ -348,7 +348,7 @@
                                     </div>
                                     </div>
                                     <div class="PR box col-md-12 form-group p_star">
-                                    @if($gen[0] == "female")
+                                    @if($gen[0] == 1)
                                     <div class="col-md-12 form-group p_star">
                                     <label for=" ">Last Menstural Period</label>
                                         <input type="date" class="form-control " id="prmensturalstartdate" name="prmensturalstartdate" value="" >

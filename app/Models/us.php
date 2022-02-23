@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class us extends Model
 {
     use HasFactory;
+    public function studydetails(){
+        return $this->belongsTo('App\Models\studydetails','sid');
+    }
 }

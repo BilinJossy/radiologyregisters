@@ -345,7 +345,7 @@ class patientcontroller extends Controller
     public function patient1($id)
     {
         $data = patient::find($id);
-        $datas= studydetails::where('pid','=',$id)->get() ;
+        $datas= studydetails::where('pid','=',$id)->paginate(5) ;
 
         return view ('singlepatient',compact('data','datas'));
     }
@@ -356,15 +356,11 @@ class patientcontroller extends Controller
         return view ('study',compact('id','gen'));
     }
     public function viewstudy($id)
-    {
+    {   
         $data=studydetails::find($id);
         return view('singlestudy',compact('data'));
     }
 
-    public function addtest($id)
-    {
-        return view ('addtest',compact('id'));
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -377,13 +373,6 @@ class patientcontroller extends Controller
         //
     }
 
-    public function search(Request $request)
-    {
-        $search_text = $request->get('patient');
-        $patient= patient::where('patientname','LIKE','%'.$search_text.'%')->get();
-
-        return view('patientsearch', compact('patient'));
-    }
 
     /**
      * Update the specified resource in storage.

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\register;
 
 class registercontroller extends Controller
@@ -51,7 +52,7 @@ class registercontroller extends Controller
 
         if($employeepassword == $employeeconfirmpassword){
         
-        $employeepassword1=md5($employeepassword);
+        $employeepassword1=Hash::make($employeepassword);
         
         $c=new register();
 
@@ -72,9 +73,7 @@ class registercontroller extends Controller
         if($c)
              {
                
-                // $i=register::select('name')->where('email','like',"$cmail")->first();
-                // $request->session()->put('sname',$i);
-
+                $i=register::select('employee_id')->where('employee_id','like',"$employeeid")->first();
                 echo "<script>alert('Success.. User Added.....');window.location='/';</script>"; 
              }
              else{
@@ -97,18 +96,19 @@ class registercontroller extends Controller
     {
         $employeeid=request('employeeid');
         $employeepass=request('employeepass');
-        $employeepassword1=md5($employeepass);
         $this->validate($request,[
             'employeeid'=>'required',
             'employeepass'=>'required|min:5|max:15',
         ]);
         $u=register::select('employee_id')->where('employee_id','like',"$employeeid")->first();
         
-        if($employeeid=='admin'&& $employeepass=='admin')
+        if($employeeid=='MANAGER'&& $employeepass==('MANAGER'))
         {
            
-            $request->session()->put('sname','admin');
-            echo "<script>alert('Successfully Logined,Welcome');window.location='/AHome';</script>";
+            $request->session()->put('eid','MANAGER');
+            $request->session()->put('etype','MANAGER');
+            // dd(session('etype'));
+            echo "<script>alert('Successfully Logined,Welcome');window.location='/plist';</script>";
             
         }
         else if(!$u)
@@ -119,15 +119,18 @@ class registercontroller extends Controller
         {
         //echo $u->mailid;
         $p=register::select('employee_password')->where('employee_id','like',"$u->employee_id")->first();
-        //echo $p->password;
         
         
-            if($p->employee_password == $employeepassword1)
+            if(Hash::check($employeepass,$p->employee_password))
             {
                 $ut=register::select('user_type')->where('employee_id','like',"$u->employee_id")->first();
-             if($ut->user_type=='radiologist')
+                if($ut->user_type=='radiologist')
                 {
                     $i=register::select('employee_id')->where('employee_id','like',"$employeeid")->first();
+                    $request->session()->put('etype',$ut->user_type);
+                    $request->session()->put('eid',$i);
+                    // dd(session('eid'));
+                    // dd(session('etype'));
                     echo "<script>alert('Successfully Logined,Welcome');window.location='/plist';</script>"; 
                 }
             }
@@ -141,12 +144,12 @@ class registercontroller extends Controller
 
     public function logout()
     {
-        // if(session()->has('loggeduser'))
-        // {
-        //     session()->pull('loggeduser');
-        //     session()->flush();
+        if(session()->has('eid'))
+        {
+        session()->pull('eid');
+        session()->flush();
             
-        // }
+        }
         return redirect('/');
     }
 

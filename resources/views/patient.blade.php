@@ -78,15 +78,15 @@
                                     </div>
                                     <div class="col-md-12 align-items-center form-group p_star" margin="5px 0 0 5px" float="left" id="gender">
                                         
-                                        <input type="radio" float="left" padding="2px" id="gender"  value="male" name="gender">
+                                        <input type="radio" float="left" padding="2px" id="gender"  value="0" name="gender">
                                         <label>Male</label>
                                         
                                         
-                                        <input type="radio" float="left" padding="2px" id="gender" name="gender" value="female" >
+                                        <input type="radio" float="left" padding="2px" id="gender" name="gender" value="1" >
                                         <label>Female</label>
                                         
                                         
-                                        <input type="radio" float="left" padding="2px" id="gender" name="gender" value="others" >
+                                        <input type="radio" float="left" padding="2px" id="gender" name="gender" value="2" >
                                         <label>Others</label>
                                         
                                             <span style="color:red" >@error('gender') {{$message}} @enderror</span>

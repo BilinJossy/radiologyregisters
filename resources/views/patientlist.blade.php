@@ -59,7 +59,14 @@
                                         <td>{{$d->uhid}}</td>
                                         <td>{{$d->patient_name}}</td>
                                         <td>{{\Carbon\Carbon::parse($d->patient_dob)->diff(\Carbon\Carbon::now())->format('%y');}}</td>
-                                        <td>{{$d->patient_gender}}</td>
+                                        <td>@if($d->patient_gender == 0)
+                                                Male
+                                            @elseif($d->patient_gender == 1)
+                                                Female
+                                            @elseif($d->patient_gender == 2)
+                                                Others
+                                            @endif
+                                        </td>
                                         <td><a href="plist/{{$d->id}}"class="btn_5">View Patient</a>
                                         </td>
                                     </tr>

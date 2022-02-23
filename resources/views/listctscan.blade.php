@@ -25,9 +25,8 @@
         <section class="login_part ">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-2 col-md-2">
-                    </div>
-                    <div class="col-lg-8 col-md-8">
+                    
+                    <div class="col-lg-12 col-md-12">
                     <table class="table table-bordered">
                                 <tr>
                                         <th><label >Patient Name</label></th>
@@ -43,23 +42,22 @@
                                     </tr>
                                     @foreach($data as $d)
                                     <tr>
-                                        <td>{{$d->studydetails->patient->patientname}}</td>
-                                        <td>{{$d->studydetails->startdate}}</td>
-                                        <td>{{$d->studydetails->visittype}}</td>
-                                        <td>{{$d->weight}}</td>
-                                        <td>{{$d->contrast}}</td>
-                                        <td>{{$d->creatine}}</td>
-                                        <td>{{$d->kV}}</td>
-                                        <td>{{$d->mAs}}</td>
-                                        <td>{{$d->dose}}</td>
+                                        <td>{{$d->studydetails->patient->patient_name}}</td>
+                                        <td>{{$d->ct_start_date}}</td>
+                                        <td>{{$d->studydetails->visit_type}}</td>
+                                        <td>{{$d->ct_weight}}</td>
+                                        <td>{{$d->ct_contrast}}</td>
+                                        <td>{{$d->ct_creatine}}</td>
+                                        <td>{{$d->ct_kV}}</td>
+                                        <td>{{$d->ct_mAs}}</td>
+                                        <td>{{$d->ct_dose}}</td>
                                         <td>{{$d->created_at}}</td>
                                         <td><a href="plist/slist/{{$d->studydetails->id}}"class="btn_5">View Study</a>
                                         </td>
                                     </tr>
                                     @endforeach
                                 </table>
-                    </div>
-                    <div class="col-lg-2 col-md-2">
+                                {{$data->links()}}
                     </div>
             </div>
         </section>

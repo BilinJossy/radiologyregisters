@@ -34,21 +34,22 @@
                                         <th><label >Visit Type</label></th>
                                         <th><label >Report Dispatch</label></th>
                                         <th><label >Stenographer</label></th>
-                                        <th><label >MRI Time</label></th>
+                                        <th><label >US Time</label></th>
                                     </tr>
                                     @foreach($data as $d)
                                     <tr>
-                                        <td>{{$d->studydetails->patient->patientname}}</td>
-                                        <td>{{$d->studydetails->startdate}}</td>
+                                        <td>{{$d->studydetails->patient->patient_name}}</td>
+                                        <td>{{$d->us_start_date}}</td>
                                         <td>{{$d->studydetails->visittype}}</td>
-                                        <td>{{$d->reportdispatch}}</td>
-                                        <td>{{$d->stenographer}}</td>
+                                        <td>{{$d->us_output_media}}</td>
+                                        <td>{{$d->us_stenographer}}</td>
                                         <td>{{$d->created_at}}</td>
                                         <td><a href="plist/slist/{{$d->studydetails->id}}"class="btn_5">View Study</a>
                                         </td>
                                     </tr>
                                     @endforeach
                                 </table>
+                                {{$data->links()}}
                     </div>
                     <div class="col-lg-2 col-md-2">
                     </div>
